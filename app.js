@@ -10,7 +10,7 @@ var login = require('./routes/login');
 var project = require('./routes/project');
 
 var app = express();
-
+console.log("test");
 /*
 var connection = mysql.createConnection({
   host     : 'localhost',
