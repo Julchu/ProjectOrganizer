@@ -11,12 +11,14 @@ var project = require('./routes/project');
 
 var app = express();
 
+/*
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'me',
   password : 'a',
   database : 'nodedb'
-});
+}); 
+
 
 connection.connect();
 
@@ -26,6 +28,7 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
 });
 
 connection.end();
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
