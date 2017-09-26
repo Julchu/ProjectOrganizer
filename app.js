@@ -18,7 +18,6 @@ var connection = mysql.createConnection({
   database : 'heroku_4ea95ec74a86030'
 }); 
 
-/*
 connection.connect((err) => {
   if (err) {
     throw err;
@@ -27,13 +26,13 @@ connection.connect((err) => {
 });
 
 
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
+connection.query('SELECT 1 + 1 AS solution', function (err, results, fields) {
+  if (err) throw err;
   console.log('The solution is: ', results[0].solution);
 });
 
 connection.end();
-*/
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
