@@ -3,8 +3,7 @@ var path = require('path');
 
 var router = express.Router();
 
-
-router.get('/', function(req, res, next) {
+router.get('/project', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../views/project.html'));
 });
 

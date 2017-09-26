@@ -4,36 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
 
 var login = require('./routes/login');
 var project = require('./routes/project');
+var sql = require('./routes/sql');
 
 var app = express();
-
-var connection = mysql.createConnection({
-  host     : 'us-cdbr-iron-east-05.cleardb.net',
-  user     : 'b4a8e285a022ee',
-  password : '2c726724',
-  database : 'heroku_4ea95ec74a86030'
-}); 
-
-connection.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log('MySQL Connected');
-});
-
-/*
-connection.query('SELECT 1 + 1 AS solution', function (err, results, fields) {
-  if (err) throw err;
-  console.log('The solution is: ', results[0].solution);
-});
-
-connection.end();
-*/
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,7 +24,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', login);
-app.use('/project', project);
+app.use('/', project);
+app.use('/', sql);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
