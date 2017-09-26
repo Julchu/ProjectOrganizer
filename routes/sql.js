@@ -4,8 +4,8 @@ var mysql = require('mysql');
 
 var router = express.Router();
 
-// var db = mysql.createPool({
-var db = mysql.createConnection({
+// var db = mysql.createConnection({
+var db = mysql.createPool({
     connectionLimit: 5,
     host: 'us-cdbr-iron-east-05.cleardb.net',
     user: 'b4a8e285a022ee',
@@ -13,7 +13,17 @@ var db = mysql.createConnection({
     database: 'heroku_4ea95ec74a86030'
   }); 
   
-db.connect((err) => {
+// db.connect((err) => {
+//     if (err) {
+//         console.log("Connection error");
+//         throw err;
+//     }
+//     else {
+//         console.log('MySQL Connected');
+//     }
+// });
+
+db.getConnection((err, connection) => {
     if (err) {
         console.log("Connection error");
         throw err;
@@ -22,10 +32,6 @@ db.connect((err) => {
         console.log('MySQL Connected');
     }
 });
-
-// db.getConnection((err, connection) => {
-    
-// });
 
 router.get('/sql', function(req, res) {
     var q = 'select * from testtable';
