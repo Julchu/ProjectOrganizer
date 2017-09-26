@@ -10,18 +10,23 @@ var login = require('./routes/login');
 var project = require('./routes/project');
 
 var app = express();
-console.log("test");
-/*
+
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'a',
-  database : 'nodedb'
+  host     : 'us-cdbr-iron-east-05.cleardb.net',
+  user     : 'b4a8e285a022ee',
+  password : '2c726724',
+  database : 'heroku_4ea95ec74a86030'
 }); 
 
 
-connection.connect();
+connection.connect((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('MySQL Connected');
+});
 
+/*
 connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   if (error) throw error;
   console.log('The solution is: ', results[0].solution);
