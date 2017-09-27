@@ -1,3 +1,7 @@
+html {
+    font: 14px "Calibri", Helvetica, Arial, sans-serif;
+}
+
 form {
     border: 3px solid #f1f1f1;
     margin: 0 auto; 
@@ -51,12 +55,6 @@ img.avatar {
 .container {
     padding: 16px;
 }
-
-h2 {
-    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
    
 ul {
     list-style-type: none;
@@ -89,5 +87,5 @@ li a {
    
 li a:hover {
     font-size: 30px;
-    background: #f6f6f6;
+    background: #FFFFFF;
 }
