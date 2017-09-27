@@ -45,8 +45,9 @@
 
             <label><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" onclick="window.location.href='/project'">Login</button>
+            
+            <!-- form(method='POST', action='/users/login') -->
+            <button type="submit" onclick="window.location.href='/project'" form(method='POST', action='/users/login')>Login</button>
         </div>
 
     </form>
