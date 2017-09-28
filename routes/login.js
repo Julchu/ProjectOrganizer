@@ -17,15 +17,21 @@ router.post("/", function (req, res) {
     var newPassConfirm = req.body.newPassConfirm;
     var newEmail = req.body.email;
     if (user && pass) {
-        console.log("User '" + user + "' has attempted to login with password '" + pass + "'.");
+        console.log();
+        console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
+        console.log();
         res.redirect('/project')
     }
     else if (newUser && newPass && newPass == newPassConfirm && newEmail){
+        console.log();
         console.log("New user '" + newUser + "' has signed up with email '" + newEmail + ", password '" + newPass + "', and confirmation password '" + newPassConfirm + "'.");
+        console.log();
         res.redirect('/');
     }
     else if (newPass && newPass != newPassConfirm) {
+        console.log();
         console.log("Passwords don't match");
+        console.log();
     }
     else {
         console.log("Missing information");
