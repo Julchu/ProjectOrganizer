@@ -34,22 +34,21 @@
       </div>
 
 
-    <form class="logincontainer">
+    <form class="logincontainer" method="POST" action='/'>
         <div class="imgcontainer">
             <img src="/images/login.png" alt="Login" class="avatar">
         </div>
 
         <div class="container">
             <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="username" required>
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
             
             <!-- form(method='POST', action='/users/login') -->
-            <button type="submit" onclick="window.location.href='/project'" form(method='POST', action='/users/login')>Login</button>
+            <button type="submit" onclick="window.location.href='/project'">Login</button>
         </div>
-
     </form>
 </body>
 
