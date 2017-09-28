@@ -16,6 +16,7 @@ router.post("/", function (req, res) {
     var newPass = req.body.newPass;
     var newPassConfirm = req.body.newPassConfirm;
     var newEmail = req.body.email;
+    
     if (user && pass) {
         console.log();
         console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
