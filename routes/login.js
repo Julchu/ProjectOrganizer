@@ -9,9 +9,10 @@ router.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
-router.post("/", function (req, res) {
+router.post("/login", function (req, res) {
     var user = req.body.user;
     var pass = req.body.pass;
+    
     var newUser = req.body.newUser;
     var newPass = req.body.newPass;
     var newPassConfirm = req.body.newPassConfirm;
@@ -41,21 +42,3 @@ router.post("/", function (req, res) {
 });
 
 module.exports = router;
-
-//Receiving credentials and authorizing users using passport.js: http://passportjs.org/docs
-
-// router.post('/login',
-//     passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
-//     function(req, res, next) {
-//         // Issue a remember me cookie if the option was checked
-//         if (!req.body.remember_me_checkbox) { return next(); }
-
-//         remember_me.issueToken(req.user, function(err, token) {
-//             if (err) { return next(err); }
-//             res.cookie('remember_me', token, { path: '/', httpOnly: true, maxAge: 604800000 });
-//             return next();
-//         });
-//     },
-//     function(req, res) {
-//         res.redirect('/');
-// });
