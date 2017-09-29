@@ -2,6 +2,7 @@
 
 var express = require('express');
 var path = require('path');
+var sql = require('./sql');
 
 var router = express.Router();
 
@@ -10,6 +11,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post("/login", function (req, res) {
+    console.log(sql.validateUser("julian"));
     var user = req.body.user;
     var pass = req.body.pass;
     

@@ -31,11 +31,11 @@ var createUser = function(username, email, password) {
 
 var deleteUser = function(username) {
     var q = "DELETE FROM users WHERE username=`" + username + "`;";
-    console.log(db.query(q));
+    db.query(q);
 };
 
-var validateUser = function() {
-    var q = 'select * from users';
+var validateUser = function(username) {
+    var q = "select username='" + username + "' from users";
     db.query(q, (err, result) => {
         if (err) {
             console.log("Query returned error");
@@ -43,12 +43,24 @@ var validateUser = function() {
         }
         else {
             console.log(result);
-            
+            return result;
+            // var str = "";
+            // for (var i in result) {
+            //     str = result[i];
+                // if (str.indexOf('julian') !== -1) {
+                //     console.log(str);
+                // }
+                // console.log(str);
+            // }
+            // console.log(str);
+            // str.indexOf("julian");
+            // console.log(str.indexOf("julian"));
         }
     });
-}
+};
 
-module.exports = router;
+
+module.exports = {router, createUser, deleteUser, validateUser};
 
 //Receiving credentials and authorizing users using passport.js: http://passportjs.org/docs
 // router.post('/login',

@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var dashboard = require('./routes/dashboard');
 var login = require('./routes/login');
 var project = require('./routes/project');
-var sql = require('./routes/sql');
+var sql = require('./routes/sql').router;
 
 var app = express();
 
