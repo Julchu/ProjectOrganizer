@@ -31,7 +31,6 @@ let queryThis = async(q) => {
             resolve(result);
         });
     });
-    
 };
 
 let createUser = async (username, email, password) => {
