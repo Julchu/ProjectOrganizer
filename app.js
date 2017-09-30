@@ -1,19 +1,19 @@
 "use strict";
 
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+let express = require('express');
+let path = require('path');
+let favicon = require('serve-favicon');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
 
 /* Route imports */
-var dashboard = require('./routes/dashboard');
-var login = require('./routes/login');
-var project = require('./routes/project');
-var sql = require('./routes/sql').router;
+let dashboard = require('./routes/dashboard');
+let login = require('./routes/login');
+let project = require('./routes/project');
+let sql = require('./routes/sql').router;
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,14 +33,14 @@ app.use('/', project);
 app.use('/', sql);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+app.use((req, res, next) => {
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

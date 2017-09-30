@@ -1,13 +1,13 @@
 "use strict";
 
-var express = require('express');
-var path = require('path');
-var mysql = require('mysql');
+let express = require('express');
+let path = require('path');
+let mysql = require('mysql');
 
-var router = express.Router();
+let router = express.Router();
 
-var db = mysql.createPool({
-    connectionLimit: 5,
+let db = mysql.createPool({
+    connectionLimit:500,
     host: 'us-cdbr-iron-east-05.cleardb.net',
     user: 'b4a8e285a022ee',
     password: '2c726724',
@@ -16,7 +16,7 @@ var db = mysql.createPool({
 
 db.getConnection((err, connection) => {
     if (err) {
-        console.log("Connection error");
+        console.log(err);
         throw err;
     }
     else {
@@ -24,53 +24,39 @@ db.getConnection((err, connection) => {
     }
 });
 
-var createUser = function(username, email, password) {
-    var q = "insert into users values ('" + username + "', '" + email + "', '" + password + "')";
-    db.query(q);
-    console.log("create user " + username);
-};
-
-var deleteUser = function(username) {
-    var q = "DELETE FROM users WHERE username='" + username + "';";
-    db.query(q);
-    console.log("delete user " + username);
-};
-
-var validateUser = function(username) {
-    // var q = "select 1 from users where username='julian'";
-    // var q = "select username='" + username + "' from users";
-    var q = "select * from users where username='a'";
-    // console.log(db.query(q)._results);
-    var banana = db.query(q, function(err, result) {
-        if (err) throw err;
-        console.log(result);
-        // return result;
+let queryThis = async(q) => {
+    return new Promise((resolve, reject) => {
+        let run = db.query(q, function(err, result) {
+            if (err) reject (err);
+            resolve(result);
+        });
     });
-    console.log(banana);
-    // console.log("validating user " + username);
-    /*
-    return abcd;
-    */
+    
+};
+
+let createUser = async (username, email, password) => {
+    let q = "insert into users values ('" + username + "', '" + email + "', '" + password + "')";
+    await queryThis(q);
+    console.log("Created user: " + username);
+};
+
+let deleteUser = async (username) => {
+    let q = "DELETE FROM users WHERE username='" + username + "';";
+    await queryThis(q);
+    console.log("Deleted user: " + username);
+};
+
+let validateUser = async (username) => {
+    let q = "select * from users where username='" + username + "';";
+    let run = JSON.stringify(await queryThis(q));
+    return run.includes('"username":"' + username + '"');
 };
 
 module.exports = {router, createUser, deleteUser, validateUser};
 
-// return result;
-// var str = "";
-// for (var i in result) {
-//     str = result[i];
-    // if (str.indexOf('julian') !== -1) {
-    //     console.log(str);
-    // }
-    // console.log(str);
-// }
-// console.log(str);
-// str.indexOf("julian");
-// console.log(str.indexOf("julian"));
-
-// return result;
 
 //Receiving credentials and authorizing users using passport.js: http://passportjs.org/docs
+
 // router.post('/login',
 //     passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
 //     function(req, res, next) {
@@ -85,16 +71,4 @@ module.exports = {router, createUser, deleteUser, validateUser};
 //     },
 //     function(req, res) {
 //         res.redirect('/');
-// });
-
-// var q = 'select * from testtable';
-// db.query(q, (err, result) => {
-//     if (err) {
-//         console.log("Query returned error");
-//         throw err;
-//     }
-//     else {
-//         console.log(result);
-//         res.send(result);
-//     }
 // });

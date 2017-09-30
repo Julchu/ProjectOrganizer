@@ -1,35 +1,44 @@
 "use strict";
 
-var express = require('express');
-var path = require('path');
-var sql = require('./sql');
+let express = require('express');
+let path = require('path');
+let sql = require('./sql');
 
-var router = express.Router();
+let router = express.Router();
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname, '../views/login.html'));
 });
 
-sql.validateUser("a");
-// sql.createUser("b", "b@gmail.com", "b");
-// sql.deleteUser("Julian");
+// sql.deleteUser("b");
 
-router.post("/login", function (req, res) {
+router.post("/login", (req, res) => {
     
-    var user = req.body.user;
-    var pass = req.body.pass;
+    let user = req.body.user;
+    let pass = req.body.pass;
     
-    var newUser = req.body.newUser;
-    var newPass = req.body.newPass;
-    var newPassConfirm = req.body.newPassConfirm;
-    var newEmail = req.body.email;
+    let newUser = req.body.newUser;
+    let newPass = req.body.newPass;
+    let newPassConfirm = req.body.newPassConfirm;
+    let newEmail = req.body.email;
     
     if (user && pass) {
-        console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
-        res.redirect('/project')
+        if (sql.validateUser(user)) {
+            console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
+            res.redirect('/project')
+        }
+        else {
+            
+        }
     }
-    else if (newUser && newPass && newPass == newPassConfirm && newEmail){
-        console.log("New user '" + newUser + "' has signed up with email '" + newEmail + ", password '" + newPass + "', and confirmation password '" + newPassConfirm + "'.");
+    else if (newUser && newPass && newPass == newPassConfirm && newEmail) {
+        if (!(sql.validateUser(newUser))) {
+            sql.createUser(newUser, newEmail, newPass);
+            console.log("New user '" + newUser + "' has signed up with email '" + newEmail + ", password '" + newPass + "', and confirmation password '" + newPassConfirm + "'.");
+        }
+        else {
+            console.log("User already exists");
+        }
         res.redirect('/');
     }
     else if (newPass && newPass != newPassConfirm) {
