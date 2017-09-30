@@ -24,7 +24,7 @@ db.getConnection((err, connection) => {
     }
 });
 
-let queryThis = async(q) => {
+let queryThis = async (q) => {
     return new Promise((resolve, reject) => {
         let run = db.query(q, function(err, result) {
             if (err) reject (err);
