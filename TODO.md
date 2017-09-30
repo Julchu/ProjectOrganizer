@@ -1,0 +1,2 @@
+- Fix SQL validation command
+-- username returning true on any input

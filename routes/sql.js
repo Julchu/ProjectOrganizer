@@ -46,9 +46,13 @@ let deleteUser = async (username) => {
 };
 
 let validateUser = async (username) => {
+    console.log(username);
     let q = "select * from users where username='" + username + "';";
     let run = JSON.stringify(await queryThis(q));
-    return run.includes('"username":"' + username + '"');
+    console.log(run);
+    let str = '"username":"' + username + '"'
+    console.log(str);
+    return run.includes(str);
 };
 
 module.exports = {router, createUser, deleteUser, validateUser};

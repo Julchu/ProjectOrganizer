@@ -23,12 +23,16 @@ router.post("/login", (req, res) => {
     let newEmail = req.body.email;
     
     if (user && pass) {
+        // if (sql.validateUser(user)) {
+        //     console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
+        //     res.redirect('/project')
+        // }
+        // else {
+        //     console.log("User does not exist");
+        //     res.redirect('/');
+        // }
         if (sql.validateUser(user)) {
-            console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
-            res.redirect('/project')
-        }
-        else {
-            
+            console.log("Exists");
         }
     }
     else if (newUser && newPass && newPass == newPassConfirm && newEmail) {
