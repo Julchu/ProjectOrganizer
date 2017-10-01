@@ -12,7 +12,8 @@ router.get('/', (req, res, next) => {
 
 // sql.deleteUser("b");
 
-router.post("/login", (req, res) => {
+
+router.post("/login", async (req, res) => {
     
     let user = req.body.user;
     let pass = req.body.pass;
@@ -21,27 +22,22 @@ router.post("/login", (req, res) => {
     let newPass = req.body.newPass;
     let newPassConfirm = req.body.newPassConfirm;
     let newEmail = req.body.email;
-    
+
     if (user && pass) {
-        // if (sql.validateUser(user)) {
-        //     console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
-        //     res.redirect('/project')
-        // }
-        // else {
-        //     console.log("User does not exist");
-        //     res.redirect('/');
-        // }
-        if (sql.validateUser(user)) {
-            console.log("Exists");
+        let exists = await sql.validateUser(user);
+        if (exists) {
+            console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
+            res.redirect('/project')
+        }
+        else {
+            res.redirect('/');
         }
     }
     else if (newUser && newPass && newPass == newPassConfirm && newEmail) {
-        if (!(sql.validateUser(newUser))) {
-            sql.createUser(newUser, newEmail, newPass);
+        let exists = await sql.validateUser(newUser);
+        if (!exists) {
+            await sql.createUser(newUser, newEmail, newPass);
             console.log("New user '" + newUser + "' has signed up with email '" + newEmail + ", password '" + newPass + "', and confirmation password '" + newPassConfirm + "'.");
-        }
-        else {
-            console.log("User already exists");
         }
         res.redirect('/');
     }

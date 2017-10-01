@@ -27,7 +27,10 @@ db.getConnection((err, connection) => {
 let queryThis = async (q) => {
     return new Promise((resolve, reject) => {
         let run = db.query(q, function(err, result) {
-            if (err) reject (err);
+            if (err) {
+                console.log("Attempt failed");
+                reject (err);
+            }
             resolve(result);
         });
     });
@@ -35,25 +38,47 @@ let queryThis = async (q) => {
 
 let createUser = async (username, email, password) => {
     let q = "insert into users values ('" + username + "', '" + email + "', '" + password + "')";
+    console.log("Attempting to create user: " + username);
     await queryThis(q);
-    console.log("Created user: " + username);
 };
 
 let deleteUser = async (username) => {
     let q = "DELETE FROM users WHERE username='" + username + "';";
+    console.log("Attempting to delete user: " + username);
     await queryThis(q);
-    console.log("Deleted user: " + username);
 };
 
 let validateUser = async (username) => {
-    console.log(username);
     let q = "select * from users where username='" + username + "';";
     let run = JSON.stringify(await queryThis(q));
-    console.log(run);
-    let str = '"username":"' + username + '"'
-    console.log(str);
-    return run.includes(str);
+    let str = '"username":"' + username + '"';
+    let exists = run.includes(str);
+    if (!exists) {
+        console.log("User doesn't exist")
+    }
+    else {
+        console.log("User exists");
+    }
+    return exists;
 };
+
+// let validateUser = async (username) => {
+//     return new Promise((resolve) => {
+//         let quer = async () => {
+//             return new Promise((resolve, reject) => {
+//                 let q = "select * from users where username='" + username + "';";
+//                 let run = db.query(q, function(err, result) {
+//                     if (err) reject (err);
+//                     resolve(result);
+//                 });
+//             });
+//         }
+//         console.log(quer());
+        // let run = JSON.stringify(quer)
+        // let str = '"username":"' + username + '"';
+        // resolve(run.includes(str));
+//     });
+// };
 
 module.exports = {router, createUser, deleteUser, validateUser};
 
@@ -75,3 +100,20 @@ module.exports = {router, createUser, deleteUser, validateUser};
 //     function(req, res) {
 //         res.redirect('/');
 // });
+
+// let qt = async (username) => {
+//     return new Promise((resolve) => {
+//         let quer = async () => {
+//             return new Promise((resolve, reject) => {
+//                 let q = "select * from users where username='" + username + "';";
+//                 let run = db.query(q, function(err, result) {
+//                     if (err) reject (err);
+//                     resolve(result);
+//                 });
+//             });
+//         }
+//         let run = JSON.stringify(quer)
+//         let str = '"username":"' + username + '"';
+//         resolve(run.includes(str));
+//     });
+// };
