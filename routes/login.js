@@ -12,6 +12,12 @@ router.get('/', (req, res, next) => {
 
 // sql.deleteUser("b");
 
+// let newUser = 'a';
+// let exists = async (newUser) => {
+//     await sql.validateUser(newUser);
+// };
+
+// exists(newUser);
 
 router.post("/login", async (req, res) => {
     
