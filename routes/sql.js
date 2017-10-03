@@ -48,17 +48,12 @@ let deleteUser = async (username) => {
     await queryThis(q);
 };
 
-let validateUser = async (username) => {
+let validateUser = async (username, password) => {
     let q = "select * from users where username='" + username + "';";
     let run = JSON.stringify(await queryThis(q));
-    let str = '"username":"' + username + '"';
-    let exists = run.includes(str);
-    if (!exists) {
-        console.log("User doesn't exist")
-    }
-    else {
-        console.log("User exists");
-    }
+    let validUser = '"username":"' + username + '"';
+    let validPass = '"password":"' + password + '"';
+    let exists = run.includes(validUser) && run.includes(validPass);
     return exists;
 };
 
