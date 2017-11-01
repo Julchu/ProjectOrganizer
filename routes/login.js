@@ -34,12 +34,13 @@ router.post("/login", async (req, res) => {
     if (user && pass) {
 
         // Checks if username exists in DB and password matches
-        let exists = await sql.validateUser(user, pass);
+        let exists = await sql.authUser(user, pass);
         if (exists) {
             console.log("User '" + user + "' has successfully logged with password '" + pass + "'.");
             res.redirect('/project')
         }
         else {
+            console.log("Invalid username or password");
             res.redirect('/');
         }
     }
@@ -47,13 +48,16 @@ router.post("/login", async (req, res) => {
     // If attempting to sign-up
     else if (newUser && newPass && newPass == newPassConfirm && newEmail) {
 
-        // Checking if username already userCheck in DB
-        let exists = await sql.validateUser(newUser);
+        // Checking if username already exists in DB
+        let exists = await sql.existingUser(newUser);
 
         // If user does not exist, create user
         if (!exists) {
             await sql.createUser(newUser, newEmail, newPass);
             console.log("New user '" + newUser + "' has signed up with email '" + newEmail + ", password '" + newPass + "', and confirmation password '" + newPassConfirm + "'.");
+        }
+        else {
+            console.log("Username already exists");
         }
         res.redirect('/');
     }

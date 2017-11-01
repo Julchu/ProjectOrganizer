@@ -48,7 +48,17 @@ let deleteUser = async (username) => {
     await queryThis(q);
 };
 
-let validateUser = async (username, password) => {
+// Checks if user exists when attempting sign-up
+let existingUser = async (username, password) => {
+    let q = "select * from users where username='" + username + "';";
+    let run = JSON.stringify(await queryThis(q));
+    let checkUser = '"username":"' + username + '"';
+    let exists = run.includes(checkUser);
+    return exists;
+};
+
+// Checks if username and password match
+let authUser = async (username, password) => {
     let q = "select * from users where username='" + username + "';";
     let run = JSON.stringify(await queryThis(q));
     let validUser = '"username":"' + username + '"';
@@ -57,7 +67,7 @@ let validateUser = async (username, password) => {
     return exists;
 };
 
-module.exports = {router, createUser, deleteUser, validateUser};
+module.exports = {router, createUser, deleteUser, existingUser, authUser};
 
 
 //Receiving credentials and authorizing users using passport.js: http://passportjs.org/docs
