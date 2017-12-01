@@ -68,22 +68,3 @@ let authUser = async (username, password) => {
 };
 
 module.exports = {router, createUser, deleteUser, existingUser, authUser};
-
-
-//Receiving credentials and authorizing users using passport.js: http://passportjs.org/docs
-
-// router.post('/login',
-//     passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
-//     function(req, res, next) {
-//         // Issue a remember me cookie if the option was checked
-//         if (!req.body.remember_me_checkbox) { return next(); }
-
-//         remember_me.issueToken(req.user, function(err, token) {
-//             if (err) { return next(err); }
-//             res.cookie('remember_me', token, { path: '/', httpOnly: true, maxAge: 604800000 });
-//             return next();
-//         });
-//     },
-//     function(req, res) {
-//         res.redirect('/');
-// });
