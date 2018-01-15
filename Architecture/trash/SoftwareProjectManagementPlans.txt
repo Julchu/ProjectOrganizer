@@ -1,0 +1,20 @@
+intro 
+
+
+PlanMe is a web app that will allow multiple people to connect together in order to create and organize group related projects.
+Users will be presented with very user friendly interface where all functions of the web app are understandable and easy to use.
+The overall purpose of this web app is to keep group projects organized and controlled
+
+
+note: repeating the same ideas.
+##### <a id="objectives"></a> 1.2 Purpose and Objectives
+The purpose of PlanMe is to allow users to effectively and easily
+plan group projects from start to end. This means having an intuitive
+and friendly interface that reacts exactly how you expect the program
+to react.  
+
+PlanMe users know the progress of different elements
+of their project and can communicate easily to other group members critical
+information about their progress.
+
+note: repeating what has been said in the intro !!! 

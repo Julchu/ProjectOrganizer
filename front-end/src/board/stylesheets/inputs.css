@@ -1,0 +1,77 @@
+input[type=text], input[type=password], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  textarea {
+      resize: none;
+      font-family: inherit;
+  }
+  
+  button {
+    background-color: #1E90FF;
+    color: #F7F5F5;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:disabled {
+      background-color: grey;
+      cursor: default;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+
+  button:hover:disabled {
+      opacity: 1;
+  }
+
+  select {
+    display: block;
+    padding: 12px 20px;
+    margin: 8px 0;
+    max-width: 100%;
+    height: auto !important;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    background: url("../assets/icon.png") right center no-repeat;
+    background-size: 16px 16px;
+    background-color: #fff;
+    background-position: 95% 50%;
+    color: #444444;
+    font-size: 12px;
+    line-height: 16px !important;
+    appearance: none;
+    /* this is must */
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+}
+/* body select.select_box option */
+
+select option {
+    padding: 0 4px;
+}
+/* for IE and Edge */
+
+select::-ms-expand {
+    display: none;
+}
+select:disabled::-ms-expand {
+    background: #f60;
+}
+
+.deletebtn {
+    background-color: #DA1B1B;
+}

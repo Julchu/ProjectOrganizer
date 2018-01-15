@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="dashboard.css" />
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <div class="imgcontainer">
+        <img src="assets/Logo_Transparent.png" alt="Zima" class="avatar">
+    </div>
+
+    <!-- Log Out button -->
+    <button
+            class="dropbtn"
+            onclick="location.href='../login/login.html';"
+            style="width:auto;position:absolute;top:5px;right:10px;">Log Out
+    </button>
+
+
+
+    <div id="createProjID" class="modal">
+        <form class="modal-content animate">
+            <div class="container">
+                <label>Project Name</label>
+                <input type="text" placeholder="Enter Project Name" name="projname" required>
+                <button type="submit" class="createProjButton">Create Project</button>
+                <button type="cancel" class="createProjButton" onclick="document.getElementById('createProjID').style.display='none'">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="deleteProjID" class="modal">
+        <form class="modal-content animate">
+            <div class="container">
+                <label>Are you sure you want to delete this project?</label>
+
+                <button type="submit" class="deleteProjButton" onclick="document.getElementById('deleteProjID').style.display='none'">Delete Project</button>
+
+                <button type="cancel" class="deleteProjButton" onclick="document.getElementById('deleteProjID').style.display='none'">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <form class="dashcontainer">
+        <div class="container">
+            <ul>
+                <li><a href="../board/board.html">CP317Project</a>
+                    <b class="deletebtn" onclick="document.getElementById('deleteProjID').style.display='block'">&times;</b>
+                    <b class="editbtn" onclick="location.href='../editprojectview/editprojectview.html';">Edit</b>
+                </li>
+            </ul>
+
+        </div>
+        <div class="container">
+            <ul>
+                <li><a href="../board/board.html">ST230Project</a>
+                    <b class="deletebtn" onclick="document.getElementById('deleteProjID').style.display='block'">&times;</b>
+                    <b class="editbtn" onclick="location.href='../editprojectview/editprojectview.html';">Edit</b>
+                </li>
+            </ul>
+
+        </div>
+        <div class="container">
+            <ul>
+                <li><a href="../board/board.html">CP363Project</a>
+                    <b class="deletebtn" onclick="document.getElementById('deleteProjID').style.display='block'">&times;</b>
+                    <b class="editbtn" onclick="location.href='../editprojectview/editprojectview.html';">Edit</b>
+                </li>
+            </ul>
+
+        </div>
+        <!-- Create New Project button -->
+        <div class="createwrapper" style="align:center;">
+
+        </div>
+    </form>
+    <div class="createwrapper" style= "height:50;">
+
+    <button
+            class="createbtn"
+            onclick="document.getElementById('createProjID').style.display='block'"
+            >Create New Project
+    </button>
+  </div>
+
+</body>
+
+</html>

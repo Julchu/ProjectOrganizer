@@ -1,0 +1,13 @@
+Users:
+(Username, PasswordHash, EmailAddress, SignUpDate, LastSignIn) ("BigDummy", "thisisnotahash", "example2@email.com", NOW());
+
+Projects:
+(OwnerID, ProjectName) (1, "BigDummyProject")
+
+TaskBoards:
+(TaskBoardName, Project) ("BigDummyTaskBoard", 1)
+
+Tasks:
+(TaskBoard, TaskName, EffortValue, Description) (1, "BigDummyTask", 1, "This is a big dummy task")
+
+ 

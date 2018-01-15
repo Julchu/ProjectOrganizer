@@ -1,0 +1,80 @@
+/* White: #FFFFFF 
+Purple: #875E93 
+Blue: #1799B1 
+Light Grey: #6A7179 
+Dark Grey: #2C2C2C */
+
+.dashboard-main-content {
+    margin-top: 40px;
+
+}
+.dashboard-background-container {
+    background-color: #5d646b;
+    padding: 20px;
+
+}
+.dashboard-main-content .list-group-item {
+    min-height: 80px;
+    border-bottom: 2px solid #6A7179;
+}
+.list-group .list-group-item:hover {
+  background-color: #bfbfbf;
+
+}
+.page-title {
+    text-align: center;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #1799B1;
+  border-color: #1799B1;
+}
+.btn-primary:hover {
+  background-color: #1799B1;
+  border-color: #1799B1;
+}
+.btn-primary:focus {
+  box-shadow: 0 0 0 3px #1799B1;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #838c96;
+  border-color: #838c96;
+}
+.btn-secondary:hover {
+  background-color: #838c96;
+  border-color: #838c96;
+}
+.btn-secondary:focus {
+  box-shadow: 0 0 0 3px #838c96;
+}
+.project-title {
+    color: #2C2C2C;
+    margin-top: 15px;
+}
+.dashboard-title {
+    margin-bottom: 15px;
+}
+
+.create-new-project {
+    border-radius: 0;
+}
+h5#create-project-modal-title {
+  color: #2C2C2C;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.edit-project-button {
+    float: right;
+    cursor: pointer;
+}
+
+.project-card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

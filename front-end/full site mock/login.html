@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Me - Group Project Planning Application</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top mainNav">
+        <a class="navbar-brand" href="#">
+            <img src="images/planme_logo.png" width="45" height="44" alt="Plan Me">
+            <img class="text-logo" src="images/planme_text_logo.png">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About <span class="sr-only"></span></a>
+                </li>   
+            </ul>
+        </div>
+
+    </nav>
+ 
+        <div class="login-content">
+            <div class="container flat-form">
+                <div class="row justify-content-md-center">
+                    <div class="col-6">
+                        
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="home" aria-selected="true">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="profile" aria-selected="false">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="reset-tab" data-toggle="tab" href="#reset" role="tab" aria-controls="contact" aria-selected="false">Reset Password</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    
+                    <div id="login" class="form-action tab-pane fade show active " role="tabpanel">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6 rounded-bottom">
+                                <form>
+                                    <div class="form-group">
+                                        <h1>Login to webapp</h1>
+                                        <p>Please Enter Login Information Here</p>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <ul>
+                                            <li>
+                                                <input class="form-control" type="text" placeholder="Username" />
+                                            </li>
+                                            <li>
+                                                <input class="form-control" type="password" placeholder="Password" />
+                                            </li>
+                                            <li>
+                                                <input type="submit" value="Login" class="btn btn-primary" />
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="register" class="form-action tab-pane fade show" role="tabpanel">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6">
+                                <form>
+                                    <div class="form-group">
+                                        <h1>Register</h1>
+                                        <p>Register to Plan Your Next Project</p>
+                                    </div>
+                                
+                                    <div class="form-group">
+                                        
+                                        <ul>
+                                            <li>
+                                                <input class="form-control" type="text" placeholder="Username" />
+                                            </li>
+                                            <li>
+                                                <input class="form-control" type="password" placeholder="Password" />
+                                            </li>
+                                            <li>
+                                                <input type="submit" value="Sign Up" class="btn btn-primary" />
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="reset" class="form-action tab-pane fade show" role="tabpanel">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6"> 
+                                <form>
+                                    <div class="form-group">
+                                        <h1>Reset Password</h1>
+                                        <p>Enter Email to be Sent a Link to Reset Your Password</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <ul>
+                                            <li>
+                                                <input class="form-control" type="text" placeholder="Email" />
+                                            </li>
+                                            <li>
+                                                <input type="submit" value="Send" class="btn btn-primary" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                                
+
+                </div>
+
+                
+            </div>
+        </div>
+
+    <!-- <li>
+        <input type="submit" value="About / Contact" class="button_about" style="position:bottom"/>
+    </li> -->
+
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> -->
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

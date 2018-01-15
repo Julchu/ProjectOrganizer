@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="dashboard.css" />
+</head>
+
+<body>
+    <h2>Dashboard</h2>
+    <div class="dropdown" style="width:auto;position:absolute;top:5px;right:10px;">
+        <button class="dropbtn">Manage Me</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="document.getElementById('createProjID').style.display='block'">Create Project</a>
+          <a href="#" onclick="document.getElementById('deleteProjID').style.display='block'">Delete Project</a>
+          <a href="../login/login.html">Log Out</a>
+        </div>
+      </div>
+        <div id="createProjID" class="modal">
+            <form class="modal-content animate">
+                <div class="container">
+                    <span onclick="document.getElementById('createProjID').style.display='none'" class="close" title="Close Modal">×</span>
+    
+                    <label><b>Project Name</b></label>
+                    <input type="text" placeholder="Enter Project Name" name="projname" required>
+    
+                    <button>Invite friends to project</button>
+    
+                    <button type="submit" class="createProjButton">Create Project</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="deleteProjID" class="modal">
+            <form class="modal-content animate">
+                <div class="container">
+                    <span onclick="document.getElementById('deleteProjID').style.display='none'" class="close" title="Close Modal">×</span>
+    
+                    <div class="container">
+                        <ul>
+                            <li><a href="#">CP317Eugene</a></li>
+                            <li><a href="#">ST230Proj</a></li>
+                            <li><a href="#">MyProj</a></li>
+                        </ul>
+            
+                    </div>
+    
+                    <button type="submit" class="deleteProjButton">Delete Project</button>
+                </div>
+            </form>
+        </div>
+
+    <form class="dashcontainer">
+        <div class="imgcontainer">
+            <img src="../../../assets/img/logo.png" alt="Zima" class="avatar">
+        </div>
+
+        <div class="container">
+            <ul>
+                <li><a href="../project/project-CP317Eugene.html">CP317Eugene</a></li>
+                <li><a href="../project/project-ST230Proj.html">ST230Proj</a></li>
+                <li><a href="../project/project-MyProj.html">MyProj</a></li>
+            </ul>
+
+        </div>
+
+    </form>
+</body>
+
+</html>

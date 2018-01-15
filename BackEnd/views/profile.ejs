@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Me User Profile - Group Project Planning Application</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
+    <link rel="stylesheet" href="../stylesheets/userProfile.css">
+    <link rel="stylesheet" href="../stylesheets/login.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top mainNav">
+        <a class="navbar-brand" href="/profile">
+            <img src="/assets/images/planme_logo.png" width="45" height="44" alt="Plan Me">
+            <img class="text-logo" src="/assets/images/planme_text_logo.png">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+     <div class="login-content">
+            <div class="container flat-form">
+                <div class="row justify-content-md-center">
+                    <div class="col-6">
+                        
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="profile" aria-selected="false">Edit Profile</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    
+                    <div id="profile" class="form-action tab-pane fade show active " role="tabpanel">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6 rounded-bottom">
+                                <form>
+                                    <div class="form-group profile-picture">
+                                        <img class="avatar" id="profile-picture-img" src="/assets/images/eagle.png" />
+                                    </div>
+                                    
+                                    <div class="profile-info container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="name">Name: </label>
+                                                    <span class="profile-name" id="profile-nameid">John Doe</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="userName">Username: </label>
+                                                    <span class="profile-username" id="profile-usernameid">testname1029</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="emailAddress">Email Address: </label>
+                                                    <span class="profile-email" id="profile-emailid">testname@test.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="edit" class="form-action tab-pane fade show" role="tabpanel">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6 rounded-bottom">
+                                <form>
+                                    <div class="form-group profile-picture">
+
+                                        <p class="change-avatar-header text-center">Change Avatar</p>
+
+                                        <img class="avatar" id="edit-profile-picture-img" src="/assets/images/eagle.png" role="button" data-toggle="modal" data-target="#edit-avatar-modal"/>
+                                    </div>
+                                    
+                                    <div class="profile-edit-info container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="edit-name">Name: </label>
+                                                    <input type="text" class="form-control" id="edit-name" placeholder="Name" maxlength="30">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="edit-userName">Username: </label>
+                                                    <input type="text" class="form-control" id="edit-userName" placeholder="Username" maxlength="30">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="edit-emailAddress">Email Address: </label>
+                                                    <input type="text" class="form-control" id="edit-emailAddress" placeholder="Email" maxlength="30">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-primary btn-lg" onclick="updateProfile(getValue('edit-name'), getValue('edit-userName'), getValue('edit-emailAddress'), true)">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Info Modal -->
+        <div class="modal fade" id="edit-avatar-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="create-project-modal-title">Change Avatar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <form>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img class="mx-auto d-block" src="/assets/images/dog.png" onclick="changeImageToDog()" />
+                                </div>
+                                <div class="col-6">
+                                    <img class="mx-auto d-block" src="/assets/images/eagle.png" onclick="changeImageToEagle()" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img class="mx-auto d-block" src="/assets/images/frog.png" onclick="changeImageToFrog()" />
+                                </div>
+                                <div class="col-6">
+                                    <img class="mx-auto d-block" src="/assets/images/lion.png" onclick="changeImageToLion()" />
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- End Card Info Modal -->
+
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="../scripts/jquery-3.2.1.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+
+    <script src="../scripts/userProfile.js"></script>
+
+</body>
+
+
+
+</html>

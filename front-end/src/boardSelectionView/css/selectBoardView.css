@@ -1,0 +1,107 @@
+/* Global Styles */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+html,
+body {
+  background-color: #212121;
+  font-family: "Lato", sans-serif;
+  height: 100% !important;
+  font-weight: 300;
+  color: #333333;
+  position: relative;
+}
+html h1,
+body h1,
+html h2,
+body h2,
+html h3,
+body h3,
+html h4,
+body h4,
+html h5,
+body h5 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0px;
+  letter-spacing: 2px;
+  color: #efefef;
+}
+
+/*--------------------------------------------*/
+/*        02 - Nav Style
+/*--------------------------------------------*/
+.mainNav {
+
+  background-color: #efefef;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+
+}
+
+.text-logo {
+  width: 70px;
+}
+
+.mainNav .navbar-nav li a,
+.mainNav .navbar-nav li a:focus {
+
+  color: #1799B1;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Oswald", helvetica, sans-serif;
+  letter-spacing: 1px;
+
+}
+
+.mainNav .navbar-nav>li>a:hover,
+.mainNav .navbar-nav>li>a:focus:hover {
+
+  color: #000000;
+
+}
+
+.mainNav .navbar-nav>li.active>a,
+.mainNav .navbar-nav>li.active>a:focus {
+  
+  color: #1799B1!important;
+  background-color: transparent;
+
+}
+
+.mainNav .navbar-nav>li.active>a:hover,
+.mainNav .navbar-nav>li.active>a:focus:hover {
+
+  color: #1799B1;
+  background-color: transparent;
+
+}
+
+
+/*--------------------------------------------*/
+/*        03 - Board Section
+/*--------------------------------------------*/
+.board-selection-header {
+  margin: 40px 0;
+  padding: 0 15px;
+}
+.board-section-container {
+  padding-bottom: 20px;
+}
+.board-section-container a {
+  white-space: normal;
+}
+.board-item {
+  min-height: 80px;
+}
+h5#add-board-modal-title {
+  color: #495057;
+}

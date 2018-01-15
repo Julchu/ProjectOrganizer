@@ -1,0 +1,5 @@
+USE planme_schema;
+
+#ALTER TABLE tasks ADD State INT UNSIGNED;
+
+ALTER TABLE tasks ADD FOREIGN KEY(State) REFERENCES TaskStates(ID);

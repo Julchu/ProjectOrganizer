@@ -1,0 +1,231 @@
+/* -------------------------------
+ * 
+ * 1. Global Style
+ * 2. Main Navigation Style
+ * 3. Board Selection Style
+ * 4. Individual Board Style
+ * 5. Abouyt Page Style
+ *
+ *
+ *
+ *
+ *
+ * ---------------------------- */
+
+/*--------------------------------------------*/
+/*              01 - Global Style
+/*--------------------------------------------*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+html,
+body {
+  background-color: #2C2C2C;
+  font-family: "Lato", sans-serif;
+  height: 100% !important;
+  font-weight: 300;
+  color: #333333;
+  position: relative;
+}
+html h1,
+body h1,
+html h2,
+body h2,
+html h3,
+body h3,
+html h4,
+body h4,
+html h5,
+body h5 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 0px;
+  letter-spacing: 2px;
+  color: #efefef;
+}
+
+/*--------------------------------------------*/
+/*         02 - Main Navigation Style
+/*--------------------------------------------*/
+.mainNav {
+
+  background-color: #efefef;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+
+}
+
+.text-logo {
+  width: 70px;
+}
+
+.mainNav .navbar-nav li a,
+.mainNav .navbar-nav li a:focus {
+
+  color: #1799B1;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Oswald", helvetica, sans-serif;
+  letter-spacing: 1px;
+
+}
+
+.mainNav .navbar-nav>li>a:hover,
+.mainNav .navbar-nav>li>a:focus:hover {
+
+  color: #000000;
+
+}
+
+.mainNav .navbar-nav>li.active>a,
+.mainNav .navbar-nav>li.active>a:focus {
+  
+  color: #1799B1!important;
+  background-color: transparent;
+
+}
+
+.mainNav .navbar-nav>li.active>a:hover,
+.mainNav .navbar-nav>li.active>a:focus:hover {
+
+  color: #1799B1;
+  background-color: transparent;
+
+}
+
+/*--------------------------------------------*/
+/*         03 - Board Selection Style
+/*--------------------------------------------*/
+.board-selection-header {
+  margin: 40px 0;
+  padding: 0 15px;
+}
+.board-selection-container {
+  padding-bottom: 20px;
+}
+.board-selection-container a {
+  white-space: normal;
+}
+.board-item {
+  min-height: 80px;
+}
+h5#add-board-modal-title {
+  color: #495057;
+}
+
+/*--------------------------------------------*/
+/*         04 - Individual Board Style
+/*--------------------------------------------*/
+.board-home .container-fluid, 
+.board-home .container-fluid .row {
+  height: 100%;
+}
+
+.board-home {
+  height: calc(100% - 70px);
+}
+.board-column {
+  height: 100%;
+}
+.board-column-content {
+
+  background-color: #6A7179;
+
+}
+.board-column-header {
+  padding: 20px 15px 20px 15px;
+}
+.board-column-header .add-card-btn {
+
+  color: #fff;
+}
+.board-card {
+  color: #2C2C2C;
+  margin-bottom: 20px;
+}
+.board-card h5 {
+  color: #2C2C2C;
+}
+.board-card button {
+  min-height: 80px;
+}
+.board-card-section {
+  min-height: 160px;
+  height: 100%;
+  padding-top: 20px;
+}
+
+#todoSection, #inProgressSection, #completedSection {
+  padding-bottom: 20px;
+}
+.list-group-item {
+  border: none;
+}
+.research-activity {
+  border-left: 10px solid #875E93;
+}
+.design-activity {
+  border-left: 10px solid #1799B1;
+}
+.development-activity {
+  border-left: 10px solid #ff884d;
+}
+.analysis-activity {
+  border-left: 10px solid #42f4c2;
+}
+
+h5#create-card-modal-title {
+  color: #2C2C2C;
+}
+
+.kanban-bar {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 15px;
+  letter-spacing: 2px;
+  color: #efefef;
+}
+.kanban-content {
+  background-color: #6A7179;
+}
+.kanban-content a {
+  margin-right: 30px;
+}
+
+#owner-title-label {
+  float: left;
+  margin-right: 10px;
+}
+
+.card-container:hover {
+  background-color: #428cf4;
+}
+
+/*--------------------------------------------*/
+/*         05 - About Page Style
+/*--------------------------------------------*/
+.text_box {
+    border: 2px solid white ;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.text_box p {
+  color: #fff;
+}
+
+/*--------------------------------------------*/
+/*         06 - Login Page Style
+/*--------------------------------------------*/
+
+.login-content {
+  margin-top: 40px;
+}

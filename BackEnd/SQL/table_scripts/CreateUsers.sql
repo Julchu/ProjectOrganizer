@@ -1,0 +1,10 @@
+USE planme_schema;
+
+CREATE TABLE users (
+	ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	Username VARCHAR(20) NOT NULL,
+    PasswordHash VARCHAR(30) NOT NULL,
+    EmailAddress VARCHAR(254) NOT NULL,
+    SignUpDate TIMESTAMP NOT NULL,
+    LastSignIn TIMESTAMP
+);

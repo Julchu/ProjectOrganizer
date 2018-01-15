@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+</head>
+
+<body>
+    <h2> Plan B</h2>
+    <button onclick="document.getElementById('signUpID').style.display='block'" style="width:auto;position:absolute;top:5px;right:10px;">Sign Up</button>
+
+    <div id="signUpID" class="modal">
+        <form class="modal-content animate">
+            <div class="container">
+                <span onclick="document.getElementById('signUpID').style.display='none'" class="close" title="Close Modal">×</span>
+
+                <label><b>Display Name</b></label>
+                <input type="text" placeholder="Enter Display Name" name="displayname" required>
+
+                <label><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw-confirm" required>
+
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+
+    <form class="logincontainer">
+        <div class="imgcontainer">
+            <img src="../../../assets/img/logo.png" alt="Zima" class="avatar">
+        </div>
+
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" onclick="window.location.href='../dashboard/dashboard.html'">Login</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

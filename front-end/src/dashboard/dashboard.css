@@ -1,0 +1,266 @@
+/* Green  #1799B1 */
+/* Grey   #6A7179 */
+/* Purple #875E93 */
+
+body {
+    background-color: white;
+}
+
+form {
+    margin: 0 auto;
+    overflow: auto;
+}
+
+form.dashcontainer {
+    max-height: 600px;
+    max-width: 400px;
+    width: 100%;
+    border: 4px solid #6A7179;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #875E93;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid white;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #DA1B1B;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* logo size */
+img.avatar {
+    width: 28%;
+    height: 28%;
+}
+
+.container {
+    padding: 16px;
+}
+
+h2 {
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    float: none;
+    border-bottom: 1px solid #40B9FF;
+}
+
+li:last-child {
+    border: none;
+}
+
+li a {
+    text-decoration: none;
+    color: #6A7179;
+    display: block;
+    width: 250px;
+    float:left;
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+    font-size: 30px;
+}
+
+li b {
+    text-decoration: none;
+    color: #1DB2F7;
+    display: block;
+    width: 50px;
+    float:right;
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+    -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li b:hover {
+
+}
+
+label {
+    color: white;
+    display: block;
+}
+
+.deletebtn {
+    padding-left: 10px;
+    color: #888;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.deletebtn:hover {
+    color: black;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    color: #FAF4F4;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #DA1B1B;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+
+    background-color: rgb(96,102,109); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 3px solid #f1f1f1;
+    width: 60%; /* Could be more or less, depending on screen size */
+    max-height:600px;
+    max-width:400px;
+    background-color: rgb(96,102,109);; /* Fallback color */
+    font-weight: bold;
+}
+
+.dropbtn {
+    background-color: rgb(16,144,169);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.createwrapper {
+
+text-align:center
+
+
+}
+
+
+.createbtn {
+    background-color: rgb(16,144,169);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width:auto;
+    cursor: pointer;
+
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1E90FF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {color: #4E4646}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #1E90FF;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="project.css" />
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="../dashboard/dashboard.html">PlanMe</a>
+        <a href="#proj">MyProj</a>
+        <a href="#task">New Task</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myTopNavToggle()">&#9776;</a>
+    </div>
+
+    <div class="boardContainer">
+        <div id="TodoBoard" class="board">
+            <h3>To Do</h3>
+            
+        </div>
+
+        <div id="progressBoard" class="board">
+            <h3>In Progress</h3>
+            <div class="card">
+                <div class="cardcontainer">
+                    <h4><b>Determine if front end works</b></h4>
+                    <div class="chip">
+                        <img src="../../../assets/img/logo2.png" alt="Person" width="96" height="96"> Zima
+                        <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="CompleteBoard" class="board">
+            <h3>Complete</h3>
+            <div class="card donecard">
+                <div class="cardcontainer">
+                    <h4><b>Nick's mock</b></h4>
+                    <div class="chip">
+                        <img src="../../../assets/img/logo2.png" alt="Person" width="96" height="96"> Zima
+                    </div>
+                </div>
+            </div>
+            <div class="card donecard">
+                    <div class="cardcontainer">
+                        <h4><b>End CP386 early</b></h4>
+                        <div class="chip">
+                            <img src="../../../assets/img/logo2.png" alt="Person" width="96" height="96"> Zima
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function myTopNavToggle() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

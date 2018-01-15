@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Me Dashboard - Group Project Planning Application</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/dashboard.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top mainNav">
+        <a class="navbar-brand" href="/profile">
+            <img src="assets/images/planme_logo.png" width="45" height="44" alt="Plan Me">
+            <img class="text-logo" src="assets/images/planme_text_logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout <span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="dashboard-main-content">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-10">
+                    
+                    <div class="dashboard-background-container rounded-bottom">
+                
+                        <div class="row justify-content-md-center">
+                            <div class="col-12 dashboard-title">
+                                <h5>Project Dashboard</h5>
+                            </div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <div class="col-12">
+                                <ul class="list-group" id="project-list"></ul>                   
+                                
+                                <a href="#" class="btn btn-secondary btn-lg btn-block pull-right create-new-project rounded-bottom" role="button" data-toggle="modal" data-target="#create-project-modal">Create New Project</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Info Modal -->
+    <div class="modal fade" id="create-project-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="create-project-modal-title">Create New Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="projectName">Project Name: </label>
+                                    <input type="text" class="form-control" id="projectName" placeholder="Project Name" maxlength="30">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="create-project-button" 
+                    onclick="createProject(getValue('projectName'))">Create Project</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- End Card Info Modal -->
+
+    <!-- Edit Card Info Modal -->
+    <div class="modal fade" id="edit-project-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-project-modal-title">Edit Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="projectName">Project Name: </label>
+                                    <input type="text" class="form-control" id="editprojectName" placeholder="Project Name" maxlength="30">
+                                    <input type="text" class="form-control" id="editprojectId" hidden="true">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="create-project-button" 
+                    onclick="updateProject(getValue('editprojectId'), getValue('editprojectName'))">Update Project</button>
+                    
+                    <button type="button" class="btn btn-danger" id="delete-project-button" onclick="removeProject(getValue('editprojectId'))">Delete Project</button>
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- End Edit Card Info Modal -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="../scripts/jquery-3.2.1.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+
+    <script src="../scripts/dashboard.js"></script>
+
+    </div>
+
+</body>
+
+</html>

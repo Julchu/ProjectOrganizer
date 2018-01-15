@@ -1,0 +1,8 @@
+USE planme_schema;
+
+DROP TABLE IF EXISTS TaskStates;
+
+CREATE TABLE TaskStates (
+	ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    State VARCHAR(20)
+);

@@ -1,0 +1,58 @@
+* {box-sizing: border-box}
+body {
+    font-family: "Open Sans", sans-serif;
+    height: 100%;
+    margin:0;
+    background-image: url("../assets/bg.jpg");
+}
+
+@media (max-width: 900px) {
+  body {
+      display: none;
+  }    
+
+  body:after {
+      content: "<body>Your screen size is unsupported.</body>";
+  } 
+}
+
+form {
+  border: 3px solid #f1f1f1;
+  margin: 0 auto; 
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #1E90FF;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(77, 94, 255);
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+
+img.avatar {
+  width: 50%;
+  height: 50%;
+}
+

@@ -1,0 +1,11 @@
+.text_box {
+    border: 2px solid white ;
+    padding: 5px;
+    margin-top: 30px;
+  }
+  h2 {
+    font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+    color:white;
+    margin: 0;
+    padding: 0;
+}

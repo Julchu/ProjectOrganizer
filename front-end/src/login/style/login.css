@@ -1,0 +1,147 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+
+
+
+body {
+  background-color: #212121;
+  color: white;
+  font-family: sans-serif;
+}
+h2{
+  background-color: #136899;
+  font-family: sans-serif;
+  height: 50px;
+  width: 100%;
+  color: white;
+  font-size: 40px;
+  padding-left: 10px;
+  padding-top:5px;
+}
+
+.flat-form {
+  background: #34495e;  /*tablebg e74c3c #34495e  #88565b ed7271*/
+  margin: 25px auto;
+  width: 390px;
+  height: 340px;
+  position: relative;
+  font-family: sans-serif;
+}
+.tabs {
+  background: #8871ED;  /*topbar #c0392b #88565b*/
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+.tabs li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.tabs a {
+  background: #136899;  /*topbar c0392b  #88565b */
+  border: 2px solid #373837;
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 12px 30px 12px 30px;
+
+}
+.tabs li:last-child a {
+  width: 159px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+.tabs a.active {
+  background: #ed7271;  /*topbar e74c3c  */
+}
+.form-action {
+  padding: 0 20px;
+  position: relative;
+}
+
+.form-action h1 {
+  font-size: 42px;
+  padding-bottom: 10px;
+}
+.form-action p {
+  font-size: 12px;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+form {
+  padding-right: 20px;
+}
+form input[type=text],
+form input[type=password],
+form input[type=submit] {
+  font-family: sans-serif;
+}
+
+form input[type=text],
+form input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  color: black;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.button {
+  border: 2px solid #373837;
+    display: block;
+    background: #136899;
+    height: 40px;
+    width: 80px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.button:hover {
+  background: #ed7271;
+}
+
+.button:active {
+  background: #136899;
+}
+
+.button_about {
+  border: 2px solid #373837;
+    display: block;
+    background: #136899;
+    height: auto;
+    width: auto;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    padding: 10px;
+right:    0;
+bottom:   0;
+}
+
+.button_about:hover {
+  background: #ed7271;
+}
+
+.button_about:active {
+  background: #136899;
+}

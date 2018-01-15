@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+
+<body>
+
+    <form action="#" id="formExample">
+        First name:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+<script src="../scripts/jquery-3.2.1.min.js"></script>
+<script>
+
+    $( "#formExample" ).submit(function( event ) {
+        $.post( '/testing', $('#formExample').serialize(), function(data) {
+                // console.log(data);
+            },
+           'json'
+        );
+    });
+
+</script>
+
+</html>

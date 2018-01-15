@@ -1,0 +1,10 @@
+USE planme_schema;
+
+DROP TABLE IF EXISTS TaskBoards; 
+
+CREATE TABLE TaskBoards (
+	ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    TaskBoardName VARCHAR(20),
+    Project INT UNSIGNED,
+    FOREIGN KEY(Project) REFERENCES Projects(ID) ON DELETE CASCADE
+);

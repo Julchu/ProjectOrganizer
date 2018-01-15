@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Board</title>
+
+    <link rel="icon" href="assets/icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/board.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/cards.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/modal.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/inputs.css" />
+</head>
+
+<body>
+
+    <div id="myTopnav" class="topnav">
+        <a id="boardtitle"></a>
+        <a id="taskcompletion" title="A percentage of completed tasks"></a>
+        <a id="effortcompletion" title="A percentage of completed effort"></a>
+        <a id="teamproductivity" title="An indicator that shows if everyone on the team is working"></a>
+        <a id="username" style="float:right;"></a>
+    </div>
+
+
+    <div id="board" class="kanban">
+        <div id="todo" class="section">
+            <div class="header">
+                <img class="addcardbtn" title="Add Item" src="assets/plus.png" width="25px" height="25px" onclick="openModal('NewWorkItemModal')">
+                <h1 id="todolabel">To Do</h1>
+            </div>
+
+
+        </div>
+
+        <div id="doing" class="section">
+            <div class="header">
+                <h1 id="doinglabel">Doing</h1>
+            </div>
+
+
+        </div>
+        <div id="done" class="section">
+            <div class="header">
+                <h1 id="donelabel">Done</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialogs -->
+
+    <div id="NewWorkItemModal" class="modal">
+        <form class="modal-content" onsubmit="return false;">
+            <div class="modal-container">
+                <div onclick="closeModal('NewWorkItemModal')" class="closebtn" title="Close">x</div>
+
+                <h3>New Task</h3>
+
+                <label>
+                    <b>Title</b>
+                </label>
+                <input id="cardtitle" type="text" placeholder="Enter title" name="title" oninput="validateInput('cardtitle', 'createButton');">
+
+                <label>
+                    <b>Description</b>
+                </label>
+                <textarea id="carddescription" placeholder="Enter description" name="description" rows="5"></textarea>
+
+                <div class="control-container">
+                    <div class="control-container-object">
+                        <label>
+                            <b>Owner</b>
+                        </label>
+                        <select id="userList" name="user">
+
+                        </select>
+                    </div>
+
+                    <div class="control-container-object">
+                        <label>
+                            <b>Activity</b>
+                        </label>
+                        <select id="activityList" name="activity">
+
+                        </select>
+                    </div>
+
+                    <div class="control-container-object">
+                        <label>
+                            <b>Effort</b>
+                        </label>
+                        <select id="effortList" name="effort">
+
+                        </select>
+                    </div>
+
+                </div>
+
+                <button id="createButton" disabled type="button" onclick="createCard('todo', getValue('cardtitle'), getValue('carddescription'), getValue('userList'), getValue('activityList'), getValue('effortList'))">Create</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="EditWorkItemModal" class="modal">
+        <form class="modal-content" onsubmit="return false;">
+            <div class="modal-container">
+                <div onclick="closeModal('EditWorkItemModal')" class="closebtn" title="Close">x</div>
+
+                <h3>Edit Task</h3>
+
+                <label hidden="true" id="editcardid"></label>
+
+                <label>
+                    <b>Title</b>
+                </label>
+                <input id="editcardtitle" type="text" placeholder="Enter title" name="title">
+
+                <label>
+                    <b>Description</b>
+                </label>
+                <textarea id="editcarddescription" placeholder="Enter description" name="description" rows="5"></textarea>
+
+                <div class="control-container">
+                    <div class="control-container-object">
+                        <label>
+                            <b>Owner</b>
+                        </label>
+                        <select id="edituserList" name="user">
+
+                        </select>
+                    </div>
+
+                    <div class="control-container-object">
+                        <label>
+                            <b>Activity</b>
+                        </label>
+                        <select id="editactivityList" name="activity">
+
+                        </select>
+                    </div>
+
+                    <div class="control-container-object">
+                        <label>
+                            <b>Effort</b>
+                        </label>
+                        <select id="editeffortList" name="effort">
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="control-container">
+                    <div class="control-container-object-half">
+                        <button type="button" class="deletebtn" onclick="deleteCard(getValue('editcardid'))">Delete</button>
+                    </div>
+                    <div class="control-container-object-half">
+                        <button type="button" onclick="editCard(getValue('editcardid'), getValue('editcardtitle'), getValue('editcarddescription'), getValue('edituserList'), getValue('editactivityList'), getValue('editeffortList'))">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+    <script src="javascript/globals.js"></script>
+    <script src="javascript/topnav.js"></script>
+    <script src="javascript/cards.js"></script>
+    <script src="javascript/board.js"></script>
+    <script src="javascript/modal.js"></script>
+</body>
+
+</html>
